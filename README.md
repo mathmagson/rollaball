@@ -5,9 +5,9 @@
 <p align="center">Collect all the yellow rotating cubes rolling a ball</p>
 
 ## First Steps
-### - [Download Unity here](https://unity.com/download)
-### - Clone the repository
-### - Open the project and click on the play button
+- [Download Unity here](https://unity.com/download)
+- Clone the repository
+- Open the project and click on the play button
 
 <br>
 <h1 align="center">Tutorial</h1>
