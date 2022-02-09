@@ -2,6 +2,7 @@
 <p align="center">First Unity Tutorial Project</p>
 
 ![Unity screenshot](./gameprint.png)
+<p align="center">Collect all the yellow rotating cubes rolling a ball</p>
 
 <br>
 <h1 align="center">First Steps</h1>
@@ -36,3 +37,20 @@
 <p>- Drag the Background Material to the Ground on the scene</p>
 <p>- Do the same for the Player</p>
 <p>- Change the Directional Light Rotation to (50,50,0)</p>
+
+<h1 align="center">Built With</h1>
+<p>- Unity</p>
+<p>- Visual Studio</p>
+<p>- C#</p>
+
+<h1 align="center">Future updates</h1>
+<p>- [ ] Finish the Tutorial section</p>
+
+<h1 align="center">Author</h1>
+**Matheus Magnusson**
+<p>[Profile](https://github.com/mathmagson "Matheus Magnusson")</p>
+
+## 🤝 Support
+Contributions, issues, and feature requests are welcome!
+
+Give a ⭐️ if you like this project!
