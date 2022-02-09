@@ -5,10 +5,10 @@
 <p align="center">Collect all the yellow rotating cubes rolling a ball</p>
 
 <br>
-<h1 align="center">First Steps</h1>
-<p>- [Download Unity here](https://unity.com/download)</p>
-<p>- Clone the repository</p>
-<p>- Open the project and click on the play button</p>
+## First Steps
+### - [Download Unity here](https://unity.com/download)
+### - Clone the repository
+### - Open the project and click on the play button
 
 <br>
 <h1 align="center">Tutorial</h1>
@@ -38,15 +38,16 @@
 <p>- Do the same for the Player</p>
 <p>- Change the Directional Light Rotation to (50,50,0)</p>
 
-<h1 align="center">Built With</h1>
+## Built With
 <p>- Unity</p>
 <p>- Visual Studio</p>
 <p>- C#</p>
 
-<h1 align="center">Future updates</h1>
+## Future Updates
 <p>- [ ] Finish the Tutorial section</p>
 
-<h1 align="center">Author</h1>
+## Author
+
 **Matheus Magnusson**
 <p>[Profile](https://github.com/mathmagson "Matheus Magnusson")</p>
 
