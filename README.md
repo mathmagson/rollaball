@@ -3,14 +3,15 @@
 
 ![Unity screenshot](./gameprint.png)
 
-<h1><b>First Steps</b></h1>
+<br>
+<h1 align="center">First Steps</h1>
 <p>- [Download Unity here](https://unity.com/download)</p>
 <p>- Clone the repository</p>
 <p>- Open the project and click on the play button</p>
 
 <br>
 <h1 align="center">Tutorial</h1>
-<p align="center">First Steps to Create your own Unity Project</p>
+<p align="center"><b>First Steps to Create your own Unity Project</b></p>
 <p>- Select Universal Render Pipeline</p>
 <p>- File -> New Scene</p>
 <p>- New -> Folder -> "Template"</p>
