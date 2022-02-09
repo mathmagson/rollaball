@@ -4,7 +4,6 @@
 ![Unity screenshot](./gameprint.png)
 <p align="center">Collect all the yellow rotating cubes rolling a ball</p>
 
-<br>
 ## First Steps
 ### - [Download Unity here](https://unity.com/download)
 ### - Clone the repository
