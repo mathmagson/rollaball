@@ -97,7 +97,17 @@ void OnMove(InputValue movementValue)
 ```
 
 ## Apply input data to the Player
-- 
+- Let's use the method Get to get the movement input data from the sphere and store it's a Vector2 variable:
+```C#
+void OnMove(InputValue movementValue)
+{
+    Vector2 movementVector = movementValue.Get<Vector2>();
+}
+```
+- The "Player" GameObject uses a Rigidbody and interacts with a physics engine.
+- Next, you need to use the variable you just created to add or apply forces to the Rigidbody and move the "Player" GameObject in the scene
+- To do this, your PlayerController script will need to access the Rigidbody component and add force to the "Player" GameObject
+
 
 ## Built With
 - Unity
