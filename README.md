@@ -4,13 +4,13 @@
 ![Unity screenshot](./gameprint.png)
 <p align="center">Collect all the yellow rotating cubes rolling a ball</p>
 
-## First Steps
+## Steps to run the game from this repository
 - [Download Unity here](https://unity.com/download)
 - Clone the repository
 - Open the project and click on the play button
 
 <h1 align="center">Code your own project</h1>
-<p align="center">A tutorial to build your own rollaball game</p>
+<p align="center">Here starts a tutorial below to build your own rollaball game</p>
 
 # Setting up the Game
 ## Create your own Unity Project
@@ -49,6 +49,7 @@
 
 # Moving the Player
 ## Add a Rigidbody to the Player
+
 
 ## Built With
 - Unity
