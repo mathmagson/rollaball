@@ -12,7 +12,7 @@
 <h1 align="center">Code your own project</h1>
 <p align="center">Here starts a tutorial below to build your own rollaball game</p>
 
-# Setting up the Game
+# 1. Setting up the Game
 ## Create your own Unity Project
 - Select Universal Render Pipeline
 - File -> New Scene
@@ -47,7 +47,7 @@
 - Do the same for the Player
 - Change the Directional Light Rotation to (50,50,0)
 
-# Moving the Player
+# 2. Moving the Player
 ## Add a Rigidbody to the Player
 
 
