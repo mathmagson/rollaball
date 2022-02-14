@@ -160,7 +160,7 @@ public class PlayerController : MonoBehaviour
 - C#
 
 ## Future Updates
-- [x] --Include "Setting up the Game" section--
+- [x] ~~Include "Setting up the Game" section~~
 - [ ] Include "Moving the Player" section - ***in progress***
 - [ ] Include "Moving the Camera" section
 - [ ] Include "Setting up the Play Area" section
