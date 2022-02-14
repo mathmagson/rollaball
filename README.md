@@ -107,6 +107,51 @@ void OnMove(InputValue movementValue)
 - The "Player" GameObject uses a Rigidbody and interacts with a physics engine.
 - Next, you need to use the variable you just created to add or apply forces to the Rigidbody and move the "Player" GameObject in the scene
 - To do this, your PlayerController script will need to access the Rigidbody component and add force to the "Player" GameObject
+- First let's create a variable to hold the reference in the script:
+
+```C#
+public class PlayerController : MonoBehaviour
+{
+
+    private Rigidbody rb; // hold the reference in the script
+
+    // Start is called before the first frame update
+    void Start()
+    {
+
+    }
+
+    void OnMove(InputValue movementValue)
+    {
+        Vector2 movementVector = movementValue.Get<Vector2>();
+    }
+}
+```
+
+- The variable is private and not public because you don't need this variable to be accessible from the Inspector or from the other Scripts right now
+- Next, inside the Start function, write:
+
+```C#
+public class PlayerController : MonoBehaviour
+{
+
+    private Rigidbody rb; // hold the reference in the script
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void OnMove(InputValue movementValue)
+    {
+        Vector2 movementVector = movementValue.Get<Vector2>();
+    }
+}
+```
+
+- This sets the value of the variable "rb" by getting a reference to the Rigidbody component, attached to the Player sphere GameObject
+- All of the code in the Start function is called on the first frame that the script is active. This is often the very first frame of the game. So the player will be able to move the sphere straight away
 
 
 ## Built With
@@ -115,14 +160,14 @@ void OnMove(InputValue movementValue)
 - C#
 
 ## Future Updates
-- [x] Readme "Setting up the Game" section
-- [ ] Readme "Moving the Player" section
-- [ ] Readme "Moving the Camera" section
-- [ ] Readme "Setting up the Play Area" section
-- [ ] Readme "Creating Collectibles" section
-- [ ] Readme "Detecting Collisions with Collectibles" section
-- [ ] Readme "Displaying Score and Text" section
-- [ ] Readme "Building the Game" section
+- [x] Include "Setting up the Game" section
+- [ ] Include "Moving the Player" section - ```diff +in progress ```
+- [ ] Include "Moving the Camera" section
+- [ ] Include "Setting up the Play Area" section
+- [ ] Include "Creating Collectibles" section
+- [ ] Include "Detecting Collisions with Collectibles" section
+- [ ] Include "Displaying Score and Text" section
+- [ ] Include "Building the Game" section
 
 ## Author
 **Matheus Magnusson**
