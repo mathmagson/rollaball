@@ -152,6 +152,31 @@ public class PlayerController : MonoBehaviour
 
 - This sets the value of the variable "rb" by getting a reference to the Rigidbody component, attached to the Player sphere GameObject
 - All of the code in the Start function is called on the first frame that the script is active. This is often the very first frame of the game. So the player will be able to move the sphere straight away
+- Now you need to set up the FixedUpdate function, so you can call force on the RigidBody stored in the variable "rb":
+
+```C#
+public class PlayerController : MonoBehaviour
+{
+
+    private Rigidbody rb; // hold the reference in the script
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void OnMove(InputValue movementValue)
+    {
+        Vector2 movementVector = movementValue.Get<Vector2>();
+    }
+
+    void FixedUpdate()
+    {
+        
+    }
+}
+```
 
 
 ## Built With
