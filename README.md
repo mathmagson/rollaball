@@ -161,7 +161,9 @@ public class PlayerController : MonoBehaviour
 
 ## Future Updates
 - [x] Include "Setting up the Game" section
-- [ ] Include "Moving the Player" section - ```diff +in progress ```
+- [ ] Include "Moving the Player" section - ```diff 
++ in progress 
+```
 - [ ] Include "Moving the Camera" section
 - [ ] Include "Setting up the Play Area" section
 - [ ] Include "Creating Collectibles" section
