@@ -161,7 +161,7 @@ public class PlayerController : MonoBehaviour
 
 ## Future Updates
 - [x] Include "Setting up the Game" section
-- [ ] Include "Moving the Player" section - <a style="color:green">in progress</a>
+- [ ] Include "Moving the Player" section - *in progress*
 - [ ] Include "Moving the Camera" section
 - [ ] Include "Setting up the Play Area" section
 - [ ] Include "Creating Collectibles" section
