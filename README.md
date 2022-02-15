@@ -191,7 +191,14 @@ void FixedUpdate()
 - You'll probably see in your script editor that there is an error on this line. There are two reasons for this.
 - Firstly, the variable you are trying to use is a Vector2 and you need to give this method a vector3 variable. 
 - Vector3 variables store data across three axes, x, y, and z. These values will determine the direction of the force you add to the ball. If you head back to the editor and look at the global gizmo, you can see the arrows also indicate this. 
-- To resolve this issue, you need to create two new variables for the individual input directions. Underneath the Rigidbody variable you created, add two more variables called movementX and movementY. These should be private like the previous variable, float type, which is short for floating point or decimal point value. These give you more precision than a whole number or integer value. You can then reference these values inside of OnMove and assign these values of movement vectors X and Y. 
+- To resolve this issue, you need to create two new variables for the individual input directions. Underneath the Rigidbody variable you created, add two more variables called movementX and movementY:
+```C#
+private Rigidbody rb;
+private float movementX;
+private float movementY;
+```
+
+- These should be private like the previous variable, float type, which is short for floating point or decimal point value. These give you more precision than a whole number or integer value. You can then reference these values inside of OnMove and assign these values of movement vectors X and Y. 
 In OnMove, add the following two lines of code:
 ```C#
 void OnMove(InputValue movementValue)
