@@ -308,8 +308,8 @@ void FixedUpdate()
 
 ## Future Updates
 - [x] ~~Include "Setting up the Game" section~~
-- [ ] Include "Moving the Player" section - ***in progress***
-- [ ] Include "Moving the Camera" section
+- [x] ~~Include "Moving the Player" section~~
+- [ ] Include "Moving the Camera" section - ***in progress***
 - [ ] Include "Setting up the Play Area" section
 - [ ] Include "Creating Collectibles" section
 - [ ] Include "Detecting Collisions with Collectibles" section
