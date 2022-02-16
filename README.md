@@ -237,6 +237,70 @@ void FixedUpdate()
 - It works! But the player is moving really slowly. 
 - Leave Play mode to stop testing. 
 
+## Fix the Player movement speed
+- Okay, you've almost finished setting up the player movement, but the speed isn't quite right. Let's go back to your script editor to fix that. 
+- First, let's add a speed variable to the script, so that you can control the player movement from inside the Inspector. 
+- Go to the start of the script, where you have declared other variables. Add a public float variable called "speed", to the start of the script with a starting value of zero. To do this, write:
+```C#
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.InputSystem;
+
+public class PlayerController : MonoBehaviour
+{
+    public float speed = 0;
+
+    private Rigidbody rb;
+
+    private float movementX;
+    private float movementY;
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
+    void OnMove(InputValue movementValue)
+    {
+        Vector2 movementVector = movementValue.Get<Vector2>();
+
+        movementX = movementVector.x;
+        movementY = movementVector.y;
+    }
+
+    void FixedUpdate()
+    {
+        Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+
+        rb.AddForce(movement);
+    }
+}
+```
+
+- Next, back in FixedUpdate, multiply the force you are adding to the sphere's Rigidbody, by this strength variable. To do this, revise your line of code to:
+```C#
+void FixedUpdate()
+{
+    Vector3 movement = new Vector3(movementX, 0.0f, movementY);
+
+    rb.AddForce(movement * speed);
+}
+```
+
+- Then save your script, and return to the editor. 
+- Because you made the speed variable public, you can find it in the Inspector on the Player Controller script component. 
+- Let's try changing the variable's value to ten, to see if the speed is fast enough to improve the player experience:
+
+![Unity screenshot](./speed.png)
+<p align="center">Set the speed to 10 in the Inspector</p>
+
+- Enter play mode, and test the revised movement. 
+- Great. This looks like a good speed for the player, and the value is now exposed, so you can adjust it easily from the Unity editor if you need to. 
+- Exit play mode, and then save your changes to the scene. 
+- Congratulations. The player can now move the sphere. 
+
 ## Built With
 - Unity
 - Visual Studio
