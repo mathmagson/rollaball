@@ -301,6 +301,32 @@ void FixedUpdate()
 - Exit play mode, and then save your changes to the scene. 
 - Congratulations. The player can now move the sphere. 
 
+# 3. Moving the Camera
+## Set the Camera position
+- So right now, the camera doesn't move and from its current position can't see a lot. To change this, you need to tie the camera to the player GameObject. 
+- First, set the position of the camera. Lift it up by 10 units, tilt it down by 45 degrees:
+
+![Unity screenshot](./cameraposition.png)
+<p align="center">Third person camera position setup</p>
+
+- This is a typical third person setup with the camera as a child of the player GameObject:
+
+![Unity screenshot](./camerachild.png)
+<p align="center">Camera as a a child of the Player</p>
+
+- This works well for a lot of games because the camera GameObject will inherit the transform changes of the player GameObject. When the player moves in the game, the camera will move with them. 
+- However, for this game, that setup creates a problem. When the player rotates, the camera rotates as well. Because the ball is rolling, the camera is also going to inherit this motion. Let's look at this in play mode. 
+- Hold down the up arrow to move. The camera is a child of the player sphere so even though the camera is not moving at all relative to the player's game object, you can see that the player game object is rotating wildly and the camera's point of view rotates with it. 
+- Okay, let's exit play mode. 
+- Let's think about how to resolve this. The player GameObject in your game, a sphere, is rotating on all three axes, not just one.
+- In a more typical third person game camera setup, the camera as a child of the player GameObject will always be in the position relative to its immediate parent. This position will be the parent's position in the game modified or offset by any value in the child's transform. In this game, that approach won't work so let's detach the camera:
+
+![Unity screenshot](./cameradetached.png)
+<p align="center">Camera detached as a a child of the Player</p>
+
+- The new offset value will be the difference between the player game object and the camera. 
+- To do this, you need to associate the camera with the player GameObject with a script rather than as a child of the GameObject.
+
 ## Built With
 - Unity
 - Visual Studio
