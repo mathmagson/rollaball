@@ -1,7 +1,7 @@
 <h1 align="center">Roll a Ball</h1>
 <p align="center">First Unity Tutorial Project</p>
 
-![Unity screenshot](./gameprint.png)
+![Unity screenshot](./Images/gameprint.png)
 <p align="center">Collect all the yellow rotating cubes rolling a ball</p>
 
 ## Steps to run the game from this repository
@@ -293,7 +293,7 @@ void FixedUpdate()
 - Because you made the speed variable public, you can find it in the Inspector on the Player Controller script component. 
 - Let's try changing the variable's value to ten, to see if the speed is fast enough to improve the player experience:
 
-![Unity screenshot](./speed.png)
+![Unity screenshot](./Images/speed.png)
 <p align="center">Set the speed to 10 in the Inspector</p>
 
 - Enter play mode, and test the revised movement. 
@@ -306,12 +306,12 @@ void FixedUpdate()
 - So right now, the camera doesn't move and from its current position can't see a lot. To change this, you need to tie the camera to the player GameObject. 
 - First, set the position of the camera. Lift it up by 10 units, tilt it down by 45 degrees:
 
-![Unity screenshot](./cameraposition.png)
+![Unity screenshot](./Images/cameraposition.png)
 <p align="center">Third person camera position setup</p>
 
 - This is a typical third person setup with the camera as a child of the player GameObject:
 
-![Unity screenshot](./camerachild.png)
+![Unity screenshot](./Images/camerachild.png)
 <p align="center">Camera as a a child of the Player</p>
 
 - This works well for a lot of games because the camera GameObject will inherit the transform changes of the player GameObject. When the player moves in the game, the camera will move with them. 
@@ -321,7 +321,7 @@ void FixedUpdate()
 - Let's think about how to resolve this. The player GameObject in your game, a sphere, is rotating on all three axes, not just one.
 - In a more typical third person game camera setup, the camera as a child of the player GameObject will always be in the position relative to its immediate parent. This position will be the parent's position in the game modified or offset by any value in the child's transform. In this game, that approach won't work so let's detach the camera:
 
-![Unity screenshot](./cameradetached.png)
+![Unity screenshot](./Images/cameradetached.png)
 <p align="center">Camera detached as a a child of the Player</p>
 
 - The new offset value will be the difference between the player game object and the camera. 
