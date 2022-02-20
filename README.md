@@ -422,6 +422,19 @@ void LateUpdate()
 - Now, you know that the camera position won't be set until the player has moved for that frame. 
 - Let's save the script and return to Unity to test it out.
 
+## Reference the Player GameObject
+- There's one thing that you need to do before testing your changes. Create a reference to the Player GameObject. 
+- To do that, drag the Player GameObject from the Hierarchy into the player slot in the camera controller component:
+
+![Unity screenshot](./Images/playercamref.png)
+<p align="center">Reference to the Player GameObject in Main Camera Controller Script</p>
+
+- Now enter play mode to test what you've done. 
+- The camera follows the rolling ball without rotating even as the ball goes over the edge. 
+- Excellent. 
+- Remember to exit play mode when you finish testing and save your Unity project. 
+- Now that you've set up the camera, in the next section of this project, you'll configure the basic play area for the game.
+
 ## Built With
 - Unity
 - Visual Studio
