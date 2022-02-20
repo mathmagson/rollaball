@@ -443,8 +443,8 @@ void LateUpdate()
 ## Future Updates
 - [x] ~~Include "Setting up the Game" section~~
 - [x] ~~Include "Moving the Player" section~~
-- [ ] Include "Moving the Camera" section - ***in progress***
-- [ ] Include "Setting up the Play Area" section
+- [x] ~~Include "Moving the Camera" section~~
+- [ ] Include "Setting up the Play Area" section - ***in progress***
 - [ ] Include "Creating Collectibles" section
 - [ ] Include "Detecting Collisions with Collectibles" section
 - [ ] Include "Displaying Score and Text" section
