@@ -459,6 +459,32 @@ void LateUpdate()
 - Set the RGB values to 79, 79, and 79. Next, set the metallic to zero and change the smoothness to 0.25 from matte finish. Then, drag the material from the Project window onto West Wall in the scene view. 
 - Great, now you've done one wall.
 
+## Finish the play field walls
+- To create the next wall, you could start with another new cube, but then you'd have to rescale the new cube before placing it. 
+- Your first wall is already a perfect size. 
+- Right-click the West Wall GameObject and select Duplicate. 
+- Rename the new GameObject East Wall. 
+- To place the wall, just remove the negative sign on the position x-value of the transform component. Then it will move into place on the east side of your game area. 
+- Now let's duplicate the East Wall and rename the duplicate North Wall. 
+- Reset the North Wall's position x-value to zero so it moves to the center of the play area. 
+- You now have two choices: You can either rotate the wall by 90 degrees around the y-axis or as this is a cuboid, you can scale the wall using 20.5 in the x-axis and 0.5 in the z-axis scale values. 
+- Now the GameObject is scaled correctly for its orientation as the North Wall. 
+- Awesome! 
+- You can drag the wall into place by hand or set the north wall's transform z-axis position to 10 to place it. 
+- Next, duplicate North Wall and rename it South Wall. 
+- Set the transform z-axis position to minus 10 and it will move into place too. 
+- First, save your changes. Then let's enter play mode and test. 
+- Fantastic! 
+- The walls are exactly where they need to be and working properly as boundaries of the play area. 
+- Remember, it's important to test early and often to catch errors as soon as possible. 
+- Let's exit play mode now. 
+- The walls are colliding with the player sphere because cube primitives come with a Box Collider component by default. 
+- This interacts with GameObjects with Rigidbody and Collider components. 
+- If you are encountering issues with wall collisions, you may have accidentally enabled the Is Trigger property on the collider component. This means the collider will be used to trigger events via script and won't be used for collisions. 
+- To fix this, disable the Is Trigger property checkbox. 
+- You've now completed the playing area for your roll-a-ball game. 
+- In the next part of this project, you'll create the pickup objects for the player to collect.
+
 ## Built With
 - Unity
 - Visual Studio
@@ -468,8 +494,8 @@ void LateUpdate()
 - [x] ~~Include "Setting up the Game" section~~
 - [x] ~~Include "Moving the Player" section~~
 - [x] ~~Include "Moving the Camera" section~~
-- [ ] Include "Setting up the Play Area" section - ***in progress***
-- [ ] Include "Creating Collectibles" section
+- [x] ~~Include "Setting up the Play Area" section~~
+- [ ] Include "Creating Collectibles" section - ***in progress***
 - [ ] Include "Detecting Collisions with Collectibles" section
 - [ ] Include "Displaying Score and Text" section
 - [ ] Include "Building the Game" section
