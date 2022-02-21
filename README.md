@@ -435,6 +435,30 @@ void LateUpdate()
 - Remember to exit play mode when you finish testing and save your Unity project. 
 - Now that you've set up the camera, in the next section of this project, you'll configure the basic play area for the game.
 
+# 4. Setting up the Play Area
+## Create a wall for the play field
+- Okay, let's set up the play field.
+- The play field for your game will be very simple. You will place walls around the edges to keep the player GameObject from falling off. And you'll create and place a set of collectible objects for the player to pick up. 
+- First, let's get organized. 
+- In the Hierarchy, create a new empty GameObject, reset its transform, and then rename it Walls. This will be the parent GameObject for all of the wall GameObjects. 
+- Now you can build some walls. 
+- Let's start by creating a new cube to be the first wall. 
+- In the Hierarchy, select Create > 3D Object > Cube. Rename the cube GameObject, West Wall. In the Inspector, right click the Transform component title and select Reset. This resets the component to its default values. 
+- Now drag the West Wall GameObject onto the Walls GameObject and release. This makes West Wall the child of Walls. 
+- Let's focus the scene view camera to the West Wall object. To do this, press the F key while the cursor is over the scene view, or select Edit > Frame Selected. 
+- Next, you need to change the size of the cube to fit one side of the play area. 
+- In the Inspector, change the cube's Transform scale x value to 0.5, y value to 2, and z value to 20.5. 
+- You can push the wall into place using the Translate tool, or you could enter a transform position value in the Inspector. 
+- Let's use the Inspector. 
+- Set the transform's position x value to minus 10. This places the wall neatly to the edge of the play area. 
+- Now just one more thing. 
+- Let's create a new material to change the color of the wall. 
+- In the Project window, go to the Materials folder and select Create > Material. 
+- Rename this new material Walls. 
+- In the Inspector, select the base map's color field to open a color picker. 
+- Set the RGB values to 79, 79, and 79. Next, set the metallic to zero and change the smoothness to 0.25 from matte finish. Then, drag the material from the Project window onto West Wall in the scene view. 
+- Great, now you've done one wall.
+
 ## Built With
 - Unity
 - Visual Studio
