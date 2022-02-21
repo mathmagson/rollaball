@@ -459,6 +459,9 @@ void LateUpdate()
 - Set the RGB values to 79, 79, and 79. Next, set the metallic to zero and change the smoothness to 0.25 from matte finish. Then, drag the material from the Project window onto West Wall in the scene view. 
 - Great, now you've done one wall.
 
+![Unity screenshot](./Images/onewall.png)
+<p align="center">This is how your wall look like</p>
+
 ## Finish the play field walls
 - To create the next wall, you could start with another new cube, but then you'd have to rescale the new cube before placing it. 
 - Your first wall is already a perfect size. 
@@ -484,6 +487,9 @@ void LateUpdate()
 - To fix this, disable the Is Trigger property checkbox. 
 - You've now completed the playing area for your roll-a-ball game. 
 - In the next part of this project, you'll create the pickup objects for the player to collect.
+
+![Unity screenshot](./Images/fourwalls.png)
+<p align="center">This is how your four walls look like</p>
 
 ## Built With
 - Unity
