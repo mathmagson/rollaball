@@ -491,6 +491,35 @@ void LateUpdate()
 ![Unity screenshot](./Images/fourwalls.png)
 <p align="center">This is how your four walls look like</p>
 
+# 5. Creating Collectibles
+## Create a collectible GameObject
+- Let's get started creating objects for the player to collect. 
+- In the Hierarchy, select Add, 3D Object, Cube. 
+- Rename the cube PickUp. 
+- In the transform component, use the vertical ellipsis to reset the GameObject's transform to origin. 
+- Press F to focus the scene view camera on the pickup cube. 
+- The Player GameObject is currently overlapping the new cube so select the move tool and drag PickUp out of the way while you work on its functionality. 
+- The cube is currently buried in the plane, just like the player sphere was when you started this project. Remember that? 
+- The cube is also a regular shape, one by one by one. So let's lift it up by half a unit so that it rests on top of the plane. 
+- In the transform component for the pickup GameObject, set the position y-value to 0.5. 
+- This cube will be the collectible object in the game. 
+- To be effective, it needs to attract the attention of the player so let's make the cube visually interesting. How about making it smaller? 
+- In the transform component, set each of the scale axis values to 0.5. This will give it the effect of floating above the play area. That will help identify this object as special. But perhaps that's not enough. 
+- Let's tilt it too. Set each of the rotation axis values to 45. 
+- The cube also needs to stand out more against the background walls and the Player GameObject. Let's change its color by creating another material. 
+- In the Project window, find and select your first material, background. 
+- In the top menu, go to Edit > Duplicate. 
+- Rename the new material PickUp. 
+- With the PickUp material still selected in the Project window, use the color picker in the Inspector to change its base map color property. 
+- Let's make it yellow and use the RGB values 255, 200, and zero. 
+- Now you can change the color of the PickUp GameObject by changing its material on the Mesh Renderer component or by dragging the material from the Project window onto the cube in the Scene view. 
+- Now it's starting to look more like a pickup, but it's still very static. 
+- One thing that attracts attention of a user is movement. 
+- In the next section, you'll write a script to rotate the cube.
+
+![Unity screenshot](./Images/fourwalls.png)
+<p align="center">This is how your PickUp object should look like</p>
+
 ## Built With
 - Unity
 - Visual Studio
