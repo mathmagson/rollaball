@@ -517,7 +517,7 @@ void LateUpdate()
 - One thing that attracts attention of a user is movement. 
 - In the next section, you'll write a script to rotate the cube.
 
-![Unity screenshot](./Images/fourwalls.png)
+![Unity screenshot](./Images/pickupyellow.png)
 <p align="center">This is how your PickUp object should look like</p>
 
 ## Built With
