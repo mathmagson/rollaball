@@ -520,6 +520,45 @@ void LateUpdate()
 ![Unity screenshot](./Images/pickupyellow.png)
 <p align="center">This is how your PickUp object should look like</p>
 
+## Rotate the PickUp GameObject
+- Okay, let's get that cube rotating. 
+- As you've done before, select the PickUp GameObject in the hierarchy and then select Add Component, then, New script in the Inspector. 
+- Call the new script Rotator, then, select Create and Add to confirm. 
+- In the Project window, move the Rotator script to your Scripts folder to keep things organized, and then, open the script to edit it. 
+- Once it's opened in your script editor, remove the Start function from the template. 
+- You won't be using forces to rotate the cube, so you can use Update rather than using the Fixed Update function. So the rest is fine. 
+- Now, before you begin, let's think for a moment about what this script needs to do. It needs to make the PickUp GameObject spin while the game is active. You have already set up the PickUp GameObject's transform rotation property to 45, 45 and 45 for the X, Y and Z axes. But these values don't change by themselves, and for the cube to spin, these values need to change every frame. To do this, you need to write a script that rotates the GameObject's transform. 
+- There are two main ways to affect the transform of a GameObject. These are Translate and Rotate.
+- Translate moves the GameObject by its transform. 
+- Rotate rotates the GameObject by its transform. 
+- It has two possible initial parameters, one using a Vector3 variable and the other using three float values for X, Y and Z. The simplest option is the Vector3 parameter, which is all that's needed for this game. 
+- After the opening curly brace of the update function, add the following line of code:
+```C#
+public class Rotator : MonoBehaviour
+{
+    // Update is called once per frame
+    void Update()
+    {
+        // Rotate the game object that this script is attached to by 15 in the X axis,
+        // 30 in the Y axis and 45 in the Z axis, multiplied by deltaTime in order to make it per second
+        // rather than per frame.
+        transform.Rotate(new Vector3(15, 30, 45) * Time.deltaTime);
+    }
+}
+```
+
+- Make sure that transform is a lowercase T, because you're referring to the component not the variable type. 
+- This action also needs to be smooth and frame rate independent. To do this, multiply the Vector3 value by time.deltaTime, before the closing parenthesis.
+- "deltaTime" is perfect for ensuring actions happen smoothly, because deltaTime is a float representing the difference in seconds since the last frame update occurred. It will dynamically change its value based on the length of a frame. 
+- Okay, that's all you need. 
+- Save this script and return to Unity. 
+- Let's enter play mode and test the script. 
+- Excellent, the PickUp GameObject rotates. 
+- Exit play mode when you're done testing. 
+- Remember to save your Unity project frequently. Now's a great time to do that. 
+- Now you've made a beautifully rotating collective object, but there's only one. 
+- In the next section, you'll learn how to turn the PickUp GameObject into a prefab and add lots of collectable objects to the play area.
+
 ## Built With
 - Unity
 - Visual Studio
