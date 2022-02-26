@@ -592,6 +592,10 @@ public class Rotator : MonoBehaviour
 - Using the hot keys, create some more pickup GameObjects and place them around the play area. 
 - About 12 is a good number for this game. 
 - To make this easier, you can move parallel to the ground or XZ plane by selecting the XZ plane at the center of the gizmo. 
+
+![Unity screenshot](./Images/prefabs.png)
+<p align="center">This is how your project should look like at this point (discard the position of objects, choose your own!)</p>
+
 - At the moment, the collectible objects are present in the game. But the player can't actually collect them. That functionality is the next thing you're going to add.
 
 ## Built With
