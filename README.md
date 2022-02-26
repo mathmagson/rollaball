@@ -559,6 +559,21 @@ public class Rotator : MonoBehaviour
 - Now you've made a beautifully rotating collective object, but there's only one. 
 - In the next section, you'll learn how to turn the PickUp GameObject into a prefab and add lots of collectable objects to the play area.
 
+## Make PickUp a Prefab
+- Now you've created one rotating pickup collectible, it's time to place them around the play area. There's one vital step needed to do this. You need to make the pickup GameObject into a prefab. 
+- A prefab is an asset that contains a template, or a blueprint, of a GameObject or GameObject's family. 
+- Once a GameObject is turned into a prefab, you can use the prefab in any scene in your current project. 
+- By turning the pickup GameObject into a prefab, you will be able to make changes to a single instance of the prefab or to the prefab asset itself. And all of the pickup GameObjects in the game will be updated with those changes. 
+- So let's get started. 
+- First, go into the project window and check that you're at the root, or top level, of the project. 
+- Make sure that no other item or directory is highlighted. Select Create > Folder, and rename this folder Prefabs. 
+- Now, select the pickup GameObject in the Hierarchy and drag it into the Prefabs folder. 
+- When you drag an item from the Hierarchy into the Project window, Unity creates a new prefab asset containing a template, or a blueprint, of the GameObject, or GameObject family. 
+- Your GameObject will turn blue in the Hierarchy when it becomes a prefab instance. 
+- Select the arrow to the right of the pickup prefab in the Hierarchy to open the Prefab Edit mode. From this mode, you can use the arrow at the top of the Hierarchy to return to a normal scene view. 
+- Now you've turned the pickup GameObject into a prefab. 
+- In the next section, you'll instantiate it around the play area for your players to collect.
+
 ## Built With
 - Unity
 - Visual Studio
