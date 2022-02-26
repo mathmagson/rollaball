@@ -574,6 +574,26 @@ public class Rotator : MonoBehaviour
 - Now you've turned the pickup GameObject into a prefab. 
 - In the next section, you'll instantiate it around the play area for your players to collect.
 
+## Add more collectibles
+- Okay, let's fill the play area with rotating pickup objects. 
+- Before you start, let's get things organized. 
+- In the Hierarchy, create a new GameObject and call it "PickUp Parent". 
+- In the Inspector, right-click the Transform component title and select Reset to reset pickup parent to origin. 
+- Then, in the Hierarchy, drag the pickup GameObject onto pickup parent. 
+- Next, make sure that you have the child pickup GameObject selected in Hierarchy, not the parent. 
+- Select the gizmo in the upper right of the scene view to switch to a top down view. 
+- Now use your scroll wheel to zoom out a little so you can see the entire play area. 
+- Okay, let's start placing pickup objects. 
+- Move the first pickup GameObject somewhere you like. 
+- Next, let's duplicate the GameObject. 
+- Make sure it's selected, and then go to Edit > Duplicate. 
+- You can use the hot keys control-D for Windows or command-D for Mac OS. 
+- Now place the second instance of the prefab. 
+- Using the hot keys, create some more pickup GameObjects and place them around the play area. 
+- About 12 is a good number for this game. 
+- To make this easier, you can move parallel to the ground or XZ plane by selecting the XZ plane at the center of the gizmo. 
+- At the moment, the collectible objects are present in the game. But the player can't actually collect them. That functionality is the next thing you're going to add.
+
 ## Built With
 - Unity
 - Visual Studio
@@ -584,8 +604,8 @@ public class Rotator : MonoBehaviour
 - [x] ~~Include "Moving the Player" section~~
 - [x] ~~Include "Moving the Camera" section~~
 - [x] ~~Include "Setting up the Play Area" section~~
-- [ ] Include "Creating Collectibles" section - ***in progress***
-- [ ] Include "Detecting Collisions with Collectibles" section
+- [x] ~~Include "Creating Collectibles" section~~
+- [ ] Include "Detecting Collisions with Collectibles" section - ***in progress***
 - [ ] Include "Displaying Score and Text" section
 - [ ] Include "Building the Game" section
 - [ ] Update "Setting up the Game" sub-section with video transcript
