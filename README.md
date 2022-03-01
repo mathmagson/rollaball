@@ -598,6 +598,41 @@ public class Rotator : MonoBehaviour
 
 - At the moment, the collectible objects are present in the game. But the player can't actually collect them. That functionality is the next thing you're going to add.
 
+# 6. Detecting Collisions with Collectibles
+## Disable PickUps with OnTriggerEnter
+- Okay, what's next? 
+- Well, your players need to be able to collect the pickup GameObjects when the player GameObject collides with them. For this to happen, the game needs to detect the collisions between the player GameObject and the pickup GameObjects and use this information to trigger a new behavior. It's really important to test the collisions carefully. The pickup objects, the player's sphere, the ground plane, and the walls, all have colliders. Without testing, the player might be able to collect and disable the wrong objects in the scene. For example, the ground plane. 
+- Let's get started. 
+- In the Project window, go to the Scripts folder and open the Player Controller script for editing. 
+- Before you begin writing the script, let's think about what the code needs to do. It needs to detect and test collisions on the player's sphere collider. To do this, you're going to use the function OnTriggerEnter. 
+- Imagine that you're playing a platform game, and you jump up to collect a perfect arch of coins, but bounce off every first one and fall back to the ground. That's not very elegant. 
+- The OnTrigger function will detect the contact between the player GameObject and the pickup GameObjects without actually creating a physical collision. 
+- Let's start with the function declaration and parameters. 
+- Beneath the FixedUpdate function write:
+```C#
+private void OnTriggerEnter(Collider other)
+{
+        
+}
+```
+
+- OnTriggerEnter will be called by Unity when the player GameObject first touches a trigger collider. It will be given a reference to the trigger collider that has been touched. This is the collider called ˜other˜. 
+- This reference gives you a way to identify the colliders that the sphere hits. 
+- You could destroy the GameObject that the trigger collider is attached to. However, in case you want to add additional functionality to the collectable objects later on, in this project, you will only deactivate the GameObject rather than destroy it. 
+- So how can you deactivate the correct object, and in this case, the pickup GameObjects using a script?
+- Let's start to write the first line of code inside the function body for OnTriggerEnter. 
+- You can address the other colliders GameObject through other.gameObject. To disable it, you need to use the method SetActive. This method accepts a boolean value inside the parentheses. That is true or false. Use false to disable the GameObject. 
+- The full line should be:
+```C#
+private void OnTriggerEnter(Collider other)
+{
+    other.gameObject.SetActive(false);
+}
+```
+
+- This code will disable GameObjects correctly. But you don't have a way to filter which GameObjects this sphere can disable. 
+- In the next section, you'll use the Unity tag system to do just that.
+
 ## Built With
 - Unity
 - Visual Studio
