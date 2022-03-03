@@ -633,6 +633,31 @@ private void OnTriggerEnter(Collider other)
 - This code will disable GameObjects correctly. But you don't have a way to filter which GameObjects this sphere can disable. 
 - In the next section, you'll use the Unity tag system to do just that.
 
+## Add a tag to the PickUp Prefab
+- Now, you've written code to deactivate GameObjects that they player GameObject collides with, but this should only apply to the pickup GameObjects. The ground or walls disappearing would not be good. 
+- To do this, you're going to use the built-in Unity Tag System. 
+- Tags allow you to identify a GameObject by comparing the tag value to a string. 
+- The first thing we need to do is set up the tag value for the pickup objects back in the Unity Editor. 
+- In the Project window, go to the Prefabs folder and select the pickup prefab. 
+- You can also use the arrow next to one of the prefab instances in the Hierarchy. This opens prefab edit mode. 
+- In the tag list at the top of the Inspector, there's a few pre-made tags, but there's nothing called pickup. 
+- Select Add Tag. This brings up the tags and layers panel with a list that's currently empty. 
+- To create a new custom tag, select the Add button to add a new row to the tag list. 
+- In the new empty element, which will be tag zero, type PickUp. This is case sensitive so be careful. It needs to be exactly the same string that you use in the script. 
+- You can close the tags and layers panel when you're done. 
+- Now you need to apply that tag to the prefab asset. Select the tag dropdown again. 
+- You should see that your new tag is now available in the list. 
+- Select this tag from the list. 
+- The asset is now tagged PickUp. 
+- Use the arrow to leave prefab edit mode, and with the power of prefab, all the instances are also now tagged PickUp as well. 
+
+![Unity screenshot](./Images/prefabtag.png)
+<p align="center">Insert the tag and leave the prefab edit mode</p>
+
+- Great! 
+- Save your changes in the Unity Editor before you return to the script. 
+- In the next section, you'll use this tag to make sure the sphere can only disable GameObjects with the PickUp tag.
+
 ## Built With
 - Unity
 - Visual Studio
