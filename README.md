@@ -658,6 +658,28 @@ private void OnTriggerEnter(Collider other)
 - Save your changes in the Unity Editor before you return to the script. 
 - In the next section, you'll use this tag to make sure the sphere can only disable GameObjects with the PickUp tag.
 
+## Write a conditional statement
+- Now that you've created a pickup tag, you can use it to make sure the sphere only disables the correct GameObject. Let's do that using an if statement. This means that if a certain condition is met, the script will behave in a specified way. 
+- To create the if statement, you're going to use CompareTag. 
+- CompareTag can compare the tag of any GameObject to a string value. 
+- At the top of the function body for OnTriggerEnter, write:
+```C#
+private void OnTriggerEnter(Collider other)
+{
+    if(other.gameObject.CompareTag("PickUp"))
+    {
+        other.gameObject.SetActive(false);
+    }
+}
+```
+
+- This is the if statement. Be careful here. Comparison is case sensitive. Make sure to write the tag exactly as you did it in the Unity Editor. 
+- Now this code will be called every time the sphere GameObject touches a trigger collider. 
+- It will receive a reference for the collider that the sphere has hit, and then check its tag. If it is a collectible object, the script will call SetActive which will deactivate the GameObject. 
+- Let's save this script and then return to the editor and enter play mode to test the game. 
+- So the target is set correctly, but the sphere is still bouncing off the pickup cubes just like we were bouncing off the walls. 
+- In the next section, you'll explore why this is happening and fix it.
+
 ## Built With
 - Unity
 - Visual Studio
