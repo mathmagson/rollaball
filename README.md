@@ -699,6 +699,34 @@ private void OnTriggerEnter(Collider other)
 - You're almost done on this section of the project. 
 - There's one last tweak to make in the next section.
 
+## Add a Rigidbody component to the PickUp Prefab
+- There's one more tweak you can make to the collectible cubes, adding a Rigidbody component. 
+- Any GameObject with a collider and a Rigidbody is considered dynamic, which means Unity won't treat it as static or stationary. 
+- You don't want the pickup GameObject to be considered static as it will take Unity longer each frame to calculate the physics and it would do this each frame because the cubes are rotating. 
+- The solution is to add a Rigidbody component to the pickup objects. 
+- In the Project window, go to the Prefabs folder and select the pickup prefab. 
+- In the Inspector, select Add Component and add a Rigidbody. 
+- Save your changes, then test in play mode and the cubes will all fall through the floor. 
+- The force of gravity is pulling them down and as they are triggers, they don't collide with the floor. 
+- If you find the Rigidbody component in the Inspector, you'll see that you could just disable the use gravity checkbox which could prevent the cubes from being pulled downwards. 
+- However, this is only a partial solution. 
+- If you do this, even though the cubes would not respond to gravity, they would still respond to physics' forces. 
+- There is a better solution, enable is kinematic:
+
+![Unity screenshot](./Images/kinematic.png)
+<p align="center">Enabling "Is Kinematic" to PickUp GameObject</p>
+
+- This sets the Rigidbody component as a kinematic Rigidbody. 
+- A kinematic Rigidbody will not react to physics' forces and it can be animated and moved by its transform. 
+- This is great for everything from objects with colliders like elevators and moving platforms to objects with triggers like your collectible cubes that need to be animated or moved by their transform. 
+- Let's save the scene again and enter play mode to test. 
+- Now the cubes do what they did before but more efficiently. 
+- Excellent! 
+- So to recap, static colliders shouldn't move like walls and floors. Dynamic colliders can move and have a Rigidbody attached. 
+- Standard Rigidbodies are moved using physics' forces. 
+- Kinematic Rigidbodies are moved using their transform. 
+- In the next section of this project, you'll count the collected objects and make a simple UI to display the player's score and messages.
+
 ## Built With
 - Unity
 - Visual Studio
