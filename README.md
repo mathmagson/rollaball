@@ -680,6 +680,25 @@ private void OnTriggerEnter(Collider other)
 - So the target is set correctly, but the sphere is still bouncing off the pickup cubes just like we were bouncing off the walls. 
 - In the next section, you'll explore why this is happening and fix it.
 
+## Set the PickUp Colliders as triggers
+- So you created tags and used them to differentiate the pickup GameObjects. But when you tested the game the sphere didn't disable them on collision. This is because the pickup GameObjects are still using normal colliders and not triggers. 
+- Remember, colliders will stop physics objects from overlapping with them. Which is perfect for a wall, for example. But triggers will just notify you if something is overlapping without stopping it. 
+- You can fix this issue by making the colliders into triggers or trigger colliders. 
+- When you turn a collider into a trigger you can detect the contact with the trigger through on trigger event messages. 
+- When a collider is a trigger you can do some clever things. You could place a trigger in the middle of a doorway in say, an adventure game. When the player enters the trigger the mini-map could update and a message could be displayed to tell them you have discovered a new room. Or every time the player walks around a particular corner, spiders might drop from the ceiling because they have walked through a trigger. 
+- You have already use OnTriggerEnter in your code, rather than on collision enter. Now you just need to make sure the collider is set to be a trigger. 
+- Let's get started. 
+- First, check that you're not in play mode. Changes made in this mode won't be saved. 
+- Next, go to the prefabs folder in the Project window and select the pickup prefab. 
+- Now find its Box Collider component in the Inspector and enable the Is Trigger checkbox. 
+- Now through the power of prefabs all the pickup GameObjects have trigger colliders. 
+- Let's save the scene and enter play mode to test it. 
+- Okay, as the players sphere enters the trigger the pickup GameObjects disappear. 
+- Excellent! 
+- Everything looks great, so you can exit play mode. 
+- You're almost done on this section of the project. 
+- There's one last tweak to make in the next section.
+
 ## Built With
 - Unity
 - Visual Studio
