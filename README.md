@@ -727,6 +727,58 @@ private void OnTriggerEnter(Collider other)
 - Kinematic Rigidbodies are moved using their transform. 
 - In the next section of this project, you'll count the collected objects and make a simple UI to display the player's score and messages.
 
+# 7. Displaying Score and Text
+## Store the value of collected PickUps
+- In this section of the project, you'll explore counting the collected cubes, displaying text, and ending the game with a message. 
+- First things first, the collectibles. 
+- To count these, you'll need a tool to store the value of the counted collectibles and another to add the value as we collect and count them. 
+- Let's add this functionality to the Player Controller script. 
+- Select the Player GameObject in the hierarchy and open the Player Controller script for editing. 
+- First, let's declare a private variable to hold the count. This should be an integer variable written as int because the count will be a whole number. The player won't be collecting partial objects. 
+- Underneath the Rigidbody variable declaration, write:
+```C#
+    private int count; 
+```
+
+- Naming the variable "count" makes it easier to understand its role in context. 
+- The game needs to start with a Count value of zero. Each time the player picks up a new cube, it then needs to increase by one. 
+- As the Count variable is private, you won't be able to set its initial value in the Inspector. You'll need to do that in this script. 
+- There are several ways you can set the starting value of Count. But for this game, let's do it in the Start function. 
+- In Start, write:
+```C#
+void Start()
+{
+    // Assign the Rigidbody component to our private rb variable
+    rb = GetComponent<Rigidbody>();
+
+    // Set the count to zero 
+    count = 0;
+}
+```
+
+- This will set the initial Count value to zero. 
+- Next, you need to increase the Count variable when the player collects a cube. 
+- These cubes are collected or disabled to make them disappear in the OnTrigger if the other GameObject has the tag PickUp. That means the OnTriggerEnter function is where you need to add the counting code. 
+- After setting the other GamesObject's active state to false, add another line of code to add one to the variable count, then save it back to that same variable. This is basic form of incrementing a value. 
+- To do this, write:
+```C#
+private void OnTriggerEnter(Collider other)
+{
+    // ..and if the GameObject you intersect has the tag 'Pick Up' assigned to it..
+    if(other.gameObject.CompareTag("PickUp"))
+    {
+        other.gameObject.SetActive(false);
+
+        // Add one to the score variable 'count'
+        count = count + 1;
+    }
+}
+```
+
+- There are other ways to add Count up or increment the value when coding for Unity, but this one is the easiest to explain visually. 
+- Now save this script and return to the Unity Editor. 
+- In the next section, you'll create and configure a UI text element so that you can display the incremental Count value to the player.
+
 ## Built With
 - Unity
 - Visual Studio
@@ -738,8 +790,8 @@ private void OnTriggerEnter(Collider other)
 - [x] ~~Include "Moving the Camera" section~~
 - [x] ~~Include "Setting up the Play Area" section~~
 - [x] ~~Include "Creating Collectibles" section~~
-- [ ] Include "Detecting Collisions with Collectibles" section - ***in progress***
-- [ ] Include "Displaying Score and Text" section
+- [x] ~~Include "Detecting Collisions with Collectibles" section~~
+- [ ] Include "Displaying Score and Text" section - ***in progress***
 - [ ] Include "Building the Game" section
 - [ ] Update "Setting up the Game" sub-section with video transcript
 - [ ] Update "Moving the Player" section before "Apply force to the Player" sub-section with video transcript
