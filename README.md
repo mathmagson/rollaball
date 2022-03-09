@@ -779,6 +779,8 @@ private void OnTriggerEnter(Collider other)
 - Now save this script and return to the Unity Editor. 
 - In the next section, you'll create and configure a UI text element so that you can display the incremental Count value to the player.
 
+## Create a UI text element
+
 ## Built With
 - Unity
 - Visual Studio
