@@ -780,6 +780,42 @@ private void OnTriggerEnter(Collider other)
 - In the next section, you'll create and configure a UI text element so that you can display the incremental Count value to the player.
 
 ## Create a UI text element
+- Now you can store and increment the players collectible cube count but there's currently no way to display it. 
+- To do this you're going to use two systems built into Unity, the User Interface or UI system and TextMesh Pro. 
+- Let's get started by creating a new TextMesh Pro text element in the Unity editor. 
+- First, in the Hierarchy select the Add button and go to UI > Text - TextMesh Pro. 
+- A dialogue window will open to install TextMesh Pro essentials. 
+- Select Import TMP essentials. 
+- These resources will be added to a new folder at the root of your Unity project. 
+- Close the window when you're done. 
+- Now you'll see that some new things have appeared in the Hierarchy. Let's review them. 
+- There's Text (TMP), the UI text element. There's also a parent GameObject for that text element called Canvas and another GameObject called Event System. These GameObjects are all required by the UI tool set. 
+- The single most important thing to know about these additional items is that all UI elements must be the child of a Canvas to behave correctly. 
+- Rename the text element GameObject, CountText. 
+- Now, select the Canvas and press the F key to see the entire GameObject in the scene view. 
+- Then select the 2D toggle at the top of the scene view to change to 2D view.
+
+![Unity screenshot](./Images/2dtext.png)
+<p align="center">This is how your project should look like at this point</p>
+
+- The default text color is white the size and alignment are good, but let's add some placeholder text. 
+- In the text field, at the top of the component add "Count" text as your placeholder. 
+- Now, to avoid getting in the player's way it makes sense to display the Count in the upper left of the screen when the game is playing. 
+- It's currently in the center of the scene, this is because the text element is anchored to the center of its parent, which is the Canvas. 
+- It is worth noting here that the transform component on the UI object is different from the other GameObjects in Unity. 
+- For UI objects, the standard transform has been replaced with a Rect Transform which takes into account many specialized features necessary for a versatile UI system including anchoring and positioning. 
+- One of the easiest ways to move the count text element into the upper left of the screen is to anchor it to the upper left corner of the Canvas, rather than to its center. 
+- To do this, select the icon at the top of the Rect transform component, displaying the current anchor preset this will open the anchors and presets menu. 
+- Hold Shift and Alt or option and select the top left anchor point. 
+- Holding those keys, will set the pivot and position for the count text based on the new anchor. 
+- And now the UI text is up in that corner, great! 
+- It does look a little crumped though. Let's add some space between the text and the edge of the screen. 
+- The simplest way to do this is to change the Rect Transform components, pos X value to 10 and pos Y value to minus 10, now that looks better. 
+
+![Unity screenshot](./Images/texttransform.png)
+<p align="center">This is how your project should look like at this point</p>
+
+- In the next section, you'll make the UI text element display the actual count value for the game.
 
 ## Built With
 - Unity
