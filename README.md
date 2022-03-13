@@ -817,6 +817,87 @@ private void OnTriggerEnter(Collider other)
 
 - In the next section, you'll make the UI text element display the actual count value for the game.
 
+## Display the Count value
+- Now that you've created a UI text element to display the count, let's connect this to the Player Controller script to get it working. 
+- In the Project window, go to the Scripts folder and open the Player Controller script in your script editor. 
+- Before you can code anything related to the TextMesh Pro element, you need to add information about it to the script. The details about the UI tool set are held in what's called a namespace. 
+- You imported another namespace earlier in this project to access the Unity Input System. 
+- To import the namespace for TextMesh Pro into this script, create a new line underneath the "using UnityEngine.InputSystem;" namespace and write:
+```C#
+    using TMPro; 
+```
+
+- With this imported, you can now write code relating to the element. 
+- Next, underneath the public variable called speed, create a new public TextMesh Pro variable using the type, TextMeshProUGUI called countText:
+```C#
+    public TextMeshProUGUI countText;
+```
+
+- This variable will hold it a reference to the UI text component on the countText GameObject. 
+- Now, you need to set the starting value of the UI text text property and get it to change as the count value changes throughout the game. 
+- It's worth creating a new function for that to avoid duplicating lines of code. 
+- Underneath the OnMove function's closing curly brace, leave a space and write:
+```C#
+void SetCountText()
+{
+
+}
+```
+
+- You can now set the count text equal to the int or whole number value of count. To do this, write:
+```C#
+void SetCountText()
+{
+    countText.text = "Count: " + count.ToString();
+}
+```
+
+- This function must be called after the line of code setting the count variable's value within the start function because count needs to have a value that can be used to set the UI text. 
+- Let's add a call to SetCountText to be end of the Start function. Write:
+```C#
+void Start()
+{
+    // Assign the Rigidbody component to our private rb variable
+    rb = GetComponent<Rigidbody>();
+
+    // Set the count to zero 
+    count = 0;
+    SetCountText();
+}
+```
+
+- The UI component's text also needs to update every time the count variable is incremented after the player collects a cube. 
+- Inside the if statement for the OnTriggerEnter, call the SetCountText function again using the same instruction:
+```C#
+private void OnTriggerEnter(Collider other)
+{
+    // ..and if the GameObject you intersect has the tag 'Pick Up' assigned to it..
+    if (other.gameObject.CompareTag("PickUp"))
+    {
+        other.gameObject.SetActive(false);
+
+        // Add one to the score variable 'count'
+        count = count + 1;
+
+        SetCountText();
+    }
+}
+```
+
+- Excellent, save your changes and switch back to the Unity editor. 
+- Now, the player controller script component has a new text property. 
+- Select the player GameObject in the Hierarchy, then drag and drop the countText GameObject onto the slot to reference the UI text element. 
+- Unity will find the TextMesh Pro UGUI component on the GameObject and correctly associate that reference. 
+- Before you test, you need to make one final adjustment. 
+- In the Hierarchy, select the EventSystem GameObject. Then, find a Standalone Input Module in the Inspector. 
+- You'll see a warning displayed, as this component is for the legacy Input Manager. But you are using the Input System. 
+- To fix this, select Replace with Input System UI Input Module to replace the old component with a new Input System component. This will be useful if you want to add UI interactions to this Unity project later. 
+- Now let's save, enter play mode and test. 
+- Great. Now the count is displayed and increments correctly as the player collects cubes. 
+- Remember to exit play mode when you're done testing. 
+- Your Roll-a-Ball game is almost complete. 
+- In the next section, you'll add a little more UI text to your game to create a game end message for the player.
+
 ## Built With
 - Unity
 - Visual Studio
