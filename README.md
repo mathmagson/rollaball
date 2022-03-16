@@ -898,6 +898,84 @@ private void OnTriggerEnter(Collider other)
 - Your Roll-a-Ball game is almost complete. 
 - In the next section, you'll add a little more UI text to your game to create a game end message for the player.
 
+## Create a game end message
+- To finish up your UI work, let's add a simple message for the player when they've collected all the cubes. 
+- First, create another UI text object. In the Hierarchy, select the Add button and go to UI > Text - TextMeshPro. 
+- Just like before, the new UI element has been created as a child of a Canvas GameObject. 
+- Rename the UI GameObject WinText. 
+- In the Inspector, find the vertex color property in the TextMeshPro component and use the color picker to set this to black. 
+- Let's also make this text a little smaller. Set the font size to 32. 
+- You could also make it bold using the B button in the font style field. 
+- In the text field add "You Win!" 
+- Lastly, let's adjust the alignment of the text to the center of the player's screen, but raised above the middle on the vertical axis, so you won't cover the player's sphere. 
+- By default, the UI text element is anchored to the center of the canvas. So you just need to raise it and move it across. 
+- In the Rect Transform component, set the pos X value to about zero, and the pos Y to 130. 
+- Let's also set the alignment to center. 
+- Then, save the scene and switch back to your script editor. 
+- Now you need to add a reference for this UI text to the player controller script. But as you only need to disable and enable the text, you can just create a reference to the GameObject. 
+- At the top of the script with the other variable, create a new public variable of the type GameObject, and call it winTextObject:
+```C#
+public GameObject winTextObject;
+```
+
+- Next, let's set the starting state for the object to be disabled. This text should only display when the player has completed the game. Because it's a starting state, add the code disabling the UI text to the start function. 
+- Write an instruction using the same method that you used to disable the collectable cube GameObjects on collision:
+```C#
+void Start()
+{
+    // Assign the Rigidbody component to our private rb variable
+    rb = GetComponent<Rigidbody>();
+
+    // Set the count to zero 
+    count = 0;
+    SetCountText();
+
+    // Set the text property of the Win Text UI to an empty string, making the 'You Win' (game over message) blank
+    winTextObject.SetActive(false);
+}
+```
+
+- You also need to set when the UI text GameObject will be activated. Let's add this to the SetCountText function. 
+- Underneath the instructions, setting the count value UI text, write "if" then add curly braces to contain the code:
+```C#
+void SetCountText()
+{
+    countText.text = "Count: " + count.ToString();
+
+    if ()
+    {
+
+    }
+}
+```
+
+- An important note. If you add a different number of collectible cubes to the game, perhaps a few more than 12 or a few less, your if conditional statement must reference that number. Otherwise, the game end text may display too early or might not display at all. 
+- Inside the curly braces, set the win text object to active:
+```C#
+void SetCountText()
+{
+    countText.text = "Count: " + count.ToString();
+
+    if (count >= 12)
+    {
+        // Set the text value of your 'winText'
+        winTextObject.SetActive(true);
+    }
+}
+```
+
+- Then save your script and return to the Unity editor. 
+- Just like before, the Player Controller component has a new UI text property. 
+- Select the Player GameObject in the Hierarchy, then drag the WinText GameObject from the Hierarchy into the slot. 
+- Save the scene and enter play mode to test your changes:
+
+![Unity screenshot](./Images/youwin.png)
+<p align="center">This is how your project should look like at this point</p>
+
+- So, the player can collect all the cubes, see the count go up and then receive a win message when they've collected them all, awesome. 
+- In the final section of this project, you'll create a build of your game and deploy it using a stand-alone player. 
+- You're almost finished.
+
 ## Built With
 - Unity
 - Visual Studio
@@ -910,8 +988,8 @@ private void OnTriggerEnter(Collider other)
 - [x] ~~Include "Setting up the Play Area" section~~
 - [x] ~~Include "Creating Collectibles" section~~
 - [x] ~~Include "Detecting Collisions with Collectibles" section~~
-- [ ] Include "Displaying Score and Text" section - ***in progress***
-- [ ] Include "Building the Game" section
+- [x] ~~Include "Displaying Score and Text" section~~
+- [ ] Include "Building the Game" section - ***in progress***
 - [ ] Update "Setting up the Game" sub-section with video transcript
 - [ ] Update "Moving the Player" section before "Apply force to the Player" sub-section with video transcript
 
