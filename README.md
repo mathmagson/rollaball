@@ -976,6 +976,37 @@ void SetCountText()
 - In the final section of this project, you'll create a build of your game and deploy it using a stand-alone player. 
 - You're almost finished.
 
+# 8. Building the Game
+## Create a build of your game
+- Now that you've finished your game, it's time to create a built to share it with players. 
+- One of the greatest things about Unity is that you can deploy games to lots of different platforms. Let's keep it simple today though, and focus on deploying for Windows or Mac. 
+- OK, let's get started. 
+- First, before you create a build of your game, make sure to save your scene one last time. Then, in the top menu, go to File, Build Settings (You can also use the hotkeys Shift + Control or Command and B), this will open up the Build Settings window. 
+- In the platform section, you'll see that the current build platform selected PC, Mac and Linux standalone is indicated by the Unity icon. The blue highlight shows your current focus. 
+- Changing the selection changes the options available to the right. 
+- You're going to make a standalone build, so you don't need to change platforms here. 
+- If you did, you'd need to select the new platform, for example, WebGL, and then select Switch Platform. 
+- Okay, select PC, Mac and Linux standalone again, if you've changed focus to display the build options. 
+- In the Target Platform field, make sure your current operating system is selected so you can play the game on your system. 
+- Next, in Scenes In Build, select Add Open Scenes to add your rollable game to the build. You can also drag scenes from the project window to this list. 
+- If sample scene is showing in the list, disable its checkbox to exclude it from your build. 
+- It is also possible to create a build in Unity without adding any scenes to the list. This will build using only the current scene open for editing, although it's good practice to add the scenes you want to your build. 
+- Now, by default, your game will play in full screen. But because it's small and doesn't have a menu, let's make it windowed so the player can close it when it's done. 
+- Select Player Settings to open a range of different configuration options for the game window. 
+- Select Resolution and Presentation and change the Fullscreen Mode field to Windowed. By default, this will have a resolution of 1024 by 768. But set the default width and height to something smaller if your screen uses a lower resolution. 
+- Once you've done that, if you need to, close the Project Settings window and return to Build Settings, select Build. This will bring up a dialogue box, asking you to choose a build location. To keep things tidy, let's associate the build location with the project. 
+- Create a new folder inside your project called "Builds". 
+- This folder must be placed at the root of your project alongside the assets and library folders. 
+- If you're using Mac OS, you can also choose a name for your build. 
+- When you're ready, confirm that you want to select folder on Windows, or save on Mac OS. 
+- Unity will now build the application and save it to the Builds folder. 
+- When building for Mac, Unity builds a .app bundle, which contains all of the relevant data and files. 
+- When building for Windows, Unity builds a .exe file and a data folder which contains all of the necessary resources. 
+- To run the game, navigate to the Builds folder, and then run the executable application. 
+- It's your game. 
+- Now you've created and built a simple game in Unity from scratch. 
+- Congratulations!
+
 ## Built With
 - Unity
 - Visual Studio
@@ -989,8 +1020,8 @@ void SetCountText()
 - [x] ~~Include "Creating Collectibles" section~~
 - [x] ~~Include "Detecting Collisions with Collectibles" section~~
 - [x] ~~Include "Displaying Score and Text" section~~
-- [ ] Include "Building the Game" section - ***in progress***
-- [ ] Update "Setting up the Game" sub-section with video transcript
+- [x] ~~Include "Building the Game" section~~
+- [ ] Update "Setting up the Game" sub-section with video transcript - ***in progress***
 - [ ] Update "Moving the Player" section before "Apply force to the Player" sub-section with video transcript
 
 ## Author
